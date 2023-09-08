@@ -1,6 +1,8 @@
 import { TabView, TabPanel } from 'primereact/tabview';  
 import { Carousel, CarouselResponsiveOption } from 'primereact/carousel';   
 import { Button } from 'primereact/button';     
+import { Project } from '../utils/interfaces';
+import { projects } from '../utils/projects';
 function Projects() {
     const responsiveOptions: CarouselResponsiveOption[] = [
         {
@@ -19,26 +21,19 @@ function Projects() {
             numScroll: 1
         }
     ];
-    const products: any = [
-        {
-            image: '1199px',
-            name: 'Lol',
-            price: 1
-        }
-    ];
-
-    const productTemplate = (product: any) => {
+    const productTemplate = (project: Project) => {
         return (
-            <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                <div className="mb-3">
-                    <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="w-6 shadow-2" />
+            <div className="border-1 bg-slate-100 surface-border border-round m-2 text-center py-3 px-3 hover:scale-105 rounded-3xl">
+                <div className="mb-3 relative">
+                    <img src={project.img_black} alt="Imagen 1" className="w-[600px] h-[300px] object-cover rounded-2xl" />
+                    <img src={project.img_white} alt="Imagen 2" className="w-[600px] h-[300px] object-cover rounded-2xl absolute top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100"/>
                 </div>
                 <div>
-                    <h4 className="mb-1">{product.name}</h4>
-                    <h6 className="mt-0 mb-3">${product.price}</h6>
-                    <div className="mt-5 flex flex-wrap gap-2 justify-content-center">
-                        <Button icon="pi pi-search" className="p-button p-button-rounded" />
-                        <Button icon="pi pi-star-fill" className="p-button-success p-button-rounded" />
+                    <h4 className="mb-1 text-3xl font-semibold">{project.name}</h4>
+                    <div className="flex gap-2 items-center w-[100%] justify-center mt-2">
+                        <Button icon="pi pi-github" className="p-button-info p-button-rounded hover:bg-white text-blue-400" />
+                        <Button icon="pi pi-video" className="p-button-danger p-button-rounded" />
+                        <Button icon="pi pi-plus" className="p-button-success p-button-rounded" />
                     </div>
                 </div>
             </div>
@@ -53,7 +48,7 @@ function Projects() {
                 <TabView>
                     <TabPanel header="Todos" leftIcon="pi pi-calendar mr-2">
                         <div className="card">
-                            <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
+                            <Carousel value={projects} className='justify-center text-center items-center' numVisible={4} numScroll={4} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
                         </div>
                     </TabPanel>
                     <TabPanel header="SPA" leftIcon="pi pi-user mr-2">
