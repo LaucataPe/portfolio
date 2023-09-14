@@ -23,17 +23,16 @@ function Projects() {
     ];
     const productTemplate = (project: Project) => {
         return (
-            <div className="border-1 bg-slate-100 surface-border border-round m-2 text-center py-3 px-3 hover:scale-105 rounded-3xl">
+            <div className="border-1 bg-slate-100 surface-border border-round m-2 text-center py-3 px-3 hover:scale-105 rounded-3xl ">
                 <div className="mb-3 relative">
                     <img src={project.img_black} alt="Imagen 1" className="w-[600px] h-[300px] object-cover rounded-2xl" />
-                    <img src={project.img_white} alt="Imagen 2" className="w-[600px] h-[300px] object-cover rounded-2xl absolute top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100"/>
+                    <img src={project.img_white} alt="Imagen 2" className="w-[600px] h-[300px] object-cover rounded-2xl absolute top-0 left-0 opacity-0 transition-opacity duration-800 ease-in-out hover:opacity-100"/>
                 </div>
                 <div>
                     <h4 className="mb-1 text-3xl font-semibold">{project.name}</h4>
                     <div className="flex gap-2 items-center w-[100%] justify-center mt-2">
-                        <Button icon="pi pi-github" className="p-button-info p-button-rounded hover:bg-white text-blue-400" />
+                        <Button icon="pi pi-github" className="p-button-info p-button-rounded hover:bg-white text-blue-400"/>
                         <Button icon="pi pi-video" className="p-button-danger p-button-rounded" />
-                        <Button icon="pi pi-plus" className="p-button-success p-button-rounded" />
                     </div>
                 </div>
             </div>
@@ -42,13 +41,13 @@ function Projects() {
      
     return (
       <>
-        <div className="h-[400px] my-5">
+        <div className="h-[100%] my-5">
             <h2 className='text-center text-3xl'>Creaciones Asombrosas</h2>
             <div className='mx-[10%]'>
                 <TabView>
                     <TabPanel header="Todos" leftIcon="pi pi-calendar mr-2">
                         <div className="card">
-                            <Carousel value={projects} className='justify-center text-center items-center' numVisible={4} numScroll={4} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
+                            <Carousel value={projects} className='justify-center text-center items-center gap-5' numVisible={3} numScroll={3} itemTemplate={productTemplate} />
                         </div>
                     </TabPanel>
                     <TabPanel header="SPA" leftIcon="pi pi-user mr-2">
