@@ -30,6 +30,7 @@ function Skills() {
         { title: 'Express', percent: '89' },
         { title: 'JWT', percent: '83' },
         { title: 'NGINX', percent: '75' },
+        { title: 'Git', percent: '100' },
     ]
 
     const circunference = 2 * 22 / 7 * 120
