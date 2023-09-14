@@ -8,6 +8,7 @@ import 'primeicons/primeicons.css';
 //core
 import "primereact/resources/primereact.min.css";   
 import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <NavBar/>
       <MyName/>
       <Projects/>
+      <Skills/>
     </>
   )
 }
